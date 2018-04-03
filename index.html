@@ -23,16 +23,29 @@
 
 	</script>
 	<style type="text/css">
+	.footer {
+		bottom: 0;
+		right: 0;
+		left: 0;
+		padding: 1rem;
+		background-color: #efefef;
+		text-align: center;
+	}
+
+
+	@media only screen and (min-width: 768px) {
 		.footer {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    padding: 1rem;
-    background-color: #efefef;
-    text-align: center;
-}
-	</style>
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			padding: 1rem;
+			background-color: #efefef;
+			text-align: center;
+		}
+	}
+
+</style>
 
 
 </head>
@@ -88,12 +101,19 @@
 			
 			<div>
 				<div class="uk-card uk-card-default">
+					<div class="uk-hidden@m uk-card-media-top">
+						<center>
+							<a href="https://www.instagram.com/copsbehindme" target="_top">
+								<img class="card-img-top" src="rohit-traveller.jpg">
+							</a>
+						</center>
+					</div>
 					<div class="uk-card-body uk-text-center">
 						<h3 class="uk-card-title">Traveller</h3>
 						<p>Living wanderlust life since childhood. Bigger plans for future destinations.</p>
 						<a href="https://www.instagram.com/copsbehindme" target="_top">Instagram</a>
 					</div>
-					<div class="uk-card-media-bottom">
+					<div class="uk-visible@m uk-card-media-bottom">
 						<center>
 							<a href="https://www.instagram.com/copsbehindme" target="_top">
 								<img class="card-img-top" src="rohit-traveller.jpg">
@@ -121,9 +141,11 @@
 			</div>
 		</div>
 
-	</div>
 
-<div class="footer text-center" id="legalFooter">
+
+
+	</div>
+	<div class="footer text-center" id="legalFooter">
 		Legals : <a href="legal.html">Privacy Policy and Terms of Use</a>
 	</div>
 
