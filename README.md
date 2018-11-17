@@ -1,5 +1,5 @@
 # rohitgupta.info
 Rohit Gupta
 
-Get all links [Here](https://www.copsbehindme.github.io)
+Get all links [Here](https://copsbehindme.github.io)
 
