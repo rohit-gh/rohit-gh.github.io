@@ -1,0 +1,60 @@
+---
+description: Color palette, typography, and CSS conventions
+globs: "**/*.{css,html}"
+alwaysApply: false
+---
+
+# Styling & Colors
+
+## Color Palette (CSS Variables in custom.css)
+
+| Token | Value | Usage |
+|-------|-------|-------|
+| `--color-footer-bg` | `#efefef` | `.footer` bar, `theme-color` meta |
+| `--color-link` | `red` | `.legal-content a:link` |
+| `--color-link-visited` | `green` | `.legal-content a:visited` |
+| UIkit defaults | — | Cards, navbar, offcanvas on all pages |
+
+Do not change these color values. Homepage card links inherit UIkit defaults.
+
+## Design Tokens
+
+`custom.css` defines shared tokens in `:root`:
+
+- **Typography:** `--font-sans`, `--text-xs` through `--text-2xl` (fluid `clamp()` scale)
+- **Spacing:** `--space-xs` through `--space-2xl`
+- **Layout:** `--content-max` (68rem), `--content-narrow` (42rem), `--content-reading` (38rem)
+- **Effects:** `--radius-sm/md/lg`, `--shadow-sm/md/lg`, `--transition-fast/base`
+
+Use these tokens for new styles; avoid hard-coded pixel values.
+
+## Typography
+
+- **System font stack:** `system-ui, -apple-system, "Segoe UI", Roboto, ...`
+- **Hero title:** `.site-hero .site-title` — larger clamp scale
+- **Card titles:** `h2.uk-card-title` at `--text-xl`
+- **Card body:** `.card-description` (primary text), `.card-meta` (muted, `--text-xs`)
+- **Legal headings:** `h2` section titles, `h3` subsections
+
+## CSS Organization
+
+| Location | Scope |
+|----------|-------|
+| `custom.css` | All active pages — tokens, skip link, layout shell, navbar, hero, persona cards, footer, legal |
+
+## Responsive Breakpoints
+
+- **960px:** Wider container padding, hero/card spacing
+- **UIkit grid:** `@m` suffix (`uk-child-width-1-3@m`) — 3 columns from medium breakpoint up
+
+## Accessibility
+
+- Skip link: `.skip-link` (visible on focus)
+- Reduced motion: `@media (prefers-reduced-motion: reduce)` disables hover transforms
+- Focus: `:focus-visible` outline on interactive elements
+
+## Do Not
+
+- Change the color palette (`#efefef`, `red`, `green`)
+- Introduce CSS preprocessors, Tailwind, or a second component library without explicit request
+- Break the light, minimal aesthetic with heavy gradients or dark themes

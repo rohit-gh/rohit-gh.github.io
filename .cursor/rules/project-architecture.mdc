@@ -1,0 +1,56 @@
+---
+description: Static GitHub Pages site architecture and file conventions
+alwaysApply: true
+---
+
+# Project Architecture
+
+Personal portfolio site for Rohit Gupta, deployed as a static GitHub Pages repo (`rohit-gh.github.io`).
+
+## Stack
+
+- Plain HTML, CSS, and JavaScript — no build step, bundler, or `package.json`
+- **UIkit 3.25.16** (jsDelivr) on all active pages
+- **custom.css** — shared design system for `index.html` and `legal.html`
+- Assets are committed directly; no image pipeline or CMS
+- jQuery removed; use UIkit data attributes (`uk-*`) and vanilla JS only
+
+## File Roles
+
+| File | Purpose |
+|------|---------|
+| `index.html` | Main landing page — persona cards, hero, navigation |
+| `legal.html` | Terms of Use, Privacy Policy, and Disclaimer |
+| `old.html` | Legacy Bootstrap layout — reference only, do not extend |
+| `custom.css` | Shared styles for all active pages (tokens, layout, cards, footer, legal) |
+| `rohit-*.webp` | Persona card images (developer, traveller, blogger) |
+| `rohit-gupta.vcf` | Contact card download |
+| `favicon.ico` | Local favicon (all pages) |
+| `CHANGELOG.md` | Release and redesign history |
+
+## Page Framework
+
+All active pages share the same shell:
+
+- `body.site-shell` — flex column, full viewport height
+- `header.site-header` — navbar + offcanvas nav
+- `main.site-main` — page content inside `.site-container`
+- `footer.footer` — pinned to bottom via flex (`margin-top: auto`)
+
+When adding pages, match `index.html` / `legal.html` (UIkit + `custom.css`).
+
+## Content Model
+
+Three persona cards on the homepage:
+
+1. **Developer** — base-station.io, GitHub, LinkedIn
+2. **Traveller** — Instagram
+3. **Blogger** — WordPress, Tumblr
+
+Each card: image (`<picture>` WebP), title, `.card-description`, `.card-meta`, `.card-links`.
+
+Footer on `index.html` links to `legal.html`. Legal page has anchor sections: `#terms`, `#privacy`, `#disclaimer`.
+
+## Deployment
+
+Push to `main`/`master`; GitHub Pages serves files from repo root. No server-side logic.

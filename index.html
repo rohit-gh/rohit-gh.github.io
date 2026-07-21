@@ -1,156 +1,146 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Rohit Gupta</title>
-    <meta name="viewport" content="width=device-width">
-    <link rel="shortcut icon" type="image/ico" href="https://res.cloudinary.com/copsbehindme/image/upload/v1542441792/favicon.ico" />
-    <!-- UIkit CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/css/uikit.min.css" />
+    <meta name="description" content="Personal website of Rohit Gupta — developer, traveller, and blogger.">
+    <meta name="theme-color" content="#efefef">
 
-    <!-- UIkit JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit-icons.min.js"></script>
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="preload" as="image" href="rohit-developer.webp" type="image/webp">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <script type="text/javascript">
-        $(window).on('load', function() {
-            UIkit.notification({
-                message: 'Welcome to the newer version of the website',
-                pos: 'bottom-center',
-                timeout: 1200
-            });
-        });
-    </script>
-    <style type="text/css">
-        .footer {
-            bottom: 0;
-            right: 0;
-            left: 0;
-            padding: 1rem;
-            background-color: #efefef;
-            text-align: center;
-        }
-        
-        @media only screen and (min-width: 768px) {
-            .footer {
-                position: absolute;
-                bottom: 0;
-                right: 0;
-                left: 0;
-                padding: 1rem;
-                background-color: #efefef;
-                text-align: center;
-            }
-        }
-    </style>
-
-
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.25.16/dist/css/uikit.min.css">
+    <link rel="stylesheet" href="custom.css">
 </head>
 
-<body>
+<body class="site-shell">
 
-    <!--sidebar, all other content comes inside -->
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
     <div class="uk-offcanvas-content">
-        <nav class="uk-navbar-container uk-margin" uk-navbar>
-            <!-- left button on nav-->
-            <div class="uk-navbar-left">
-                <button type="button" uk-toggle="target: #offcanvas-nav-primary" class="uk-navbar-toggle" uk-navbar-toggle-icon href=""></button>
-            </div>
-            <div class="uk-navbar-center">
-                <a class="uk-navbar-item uk-logo" href="#">Rohit Gupta</a>
-            </div>
-        </nav>
-
-
-        <!-- This is side navbar-->
-        <div id="offcanvas-nav-primary" uk-offcanvas="overlay: true">
-            <div class="uk-offcanvas-bar uk-flex uk-flex-column">
-
-                <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
-                    <li class="uk-parent"> <a href="#">Home</a> </li>
-                    <li class="uk-parent"> <a href="legal.html">Terms of Use</a> </li>
-                    <li class="uk-parent"> <a href="legal.html">Privacy Policy</a> </li>
-                </ul>
-
-            </div>
-        </div>
-
-
-        <hr>
-
-        <div class="uk-child-width-1-3@s" uk-grid uk-height-match>
-
-            <div>
-                <div class="uk-card uk-card-default">
-                    <div class="uk-card-media-top">
-                        <center>
-                            <a href="https://www.github.com/rohit-gh" target="_top">
-                                <img src="rohit-developer.jpg" alt="">
-                            </a>
-                        </center>
+        <header class="site-header">
+            <div class="site-container">
+                <nav class="uk-navbar-container site-nav" uk-navbar aria-label="Main navigation">
+                    <div class="uk-navbar-left">
+                        <button type="button" class="uk-navbar-toggle" uk-toggle="target: #offcanvas-nav-primary" uk-navbar-toggle-icon aria-label="Open menu"></button>
                     </div>
-                    <div class="uk-card-body uk-text-center">
-                        <h3 class="uk-card-title">Developer</h3>
-                        <p>ASP.Net Developer, proficient in C#, Entity Framework, Javascript, Jquery, HTML, CSS</p>
-                        <a href="https://www.github.com/rohit-gh" target="_top">Github</a> , <a href="https://www.linkedin.com/in/heyrohit94" target="_top">LinkedIn</a>
+                    <div class="uk-navbar-center">
+                        <a class="uk-navbar-item uk-logo site-mark" href="#" aria-label="Rohit Gupta, home">
+                            <span class="site-mark__text" aria-hidden="true">RG</span>
+                        </a>
                     </div>
+                </nav>
+            </div>
+
+            <div id="offcanvas-nav-primary" uk-offcanvas="overlay: true">
+                <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+                    <button class="uk-offcanvas-close" type="button" uk-close aria-label="Close menu"></button>
+                    <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="legal.html#terms">Terms of Use</a></li>
+                        <li><a href="legal.html#privacy">Privacy Policy</a></li>
+                    </ul>
                 </div>
             </div>
+        </header>
 
-            <div>
-                <div class="uk-card uk-card-default">
-                    <div class="uk-hidden@m uk-card-media-top">
-                        <center>
-                            <a href="https://www.instagram.com/rohitgupta.insta" target="_top">
-                                <img class="card-img-top" src="rohit-traveller.jpg">
-                            </a>
-                        </center>
+        <main id="main-content" class="site-main">
+            <div class="site-container">
+                <header class="site-hero">
+                    <h1 class="site-title">
+                        <span class="site-name">Rohit Gupta</span>
+                        <span class="rotating-quote" aria-live="polite" aria-atomic="true">
+                            <span class="rotating-quote__text"></span>
+                            <cite class="rotating-quote__source"></cite>
+                        </span>
+                    </h1>
+                    <p class="site-tagline">Developer, traveller, and blogger - three sides of one journey.</p>
+                </header>
+
+                <section class="persona-grid uk-child-width-1-1 uk-child-width-1-3@m" uk-grid uk-height-match="target: .persona-card" aria-label="About me">
+                    <div>
+                        <article class="uk-card uk-card-default persona-card">
+                            <div class="uk-card-media-top">
+                                <a class="card-image-link" href="https://base-station.io" target="_top" rel="noopener">
+                                    <picture>
+                                        <source srcset="rohit-developer.webp" type="image/webp">
+                                        <img src="rohit-developer.jpg" alt="Rohit Gupta as a developer" width="400" height="400" fetchpriority="high" decoding="async">
+                                    </picture>
+                                </a>
+                            </div>
+                            <div class="uk-card-body">
+                                <h2 class="uk-card-title">Developer</h2>
+                                <p class="card-description">Building scalable backends and Shopify integrations for high-traffic applications. I enjoy turning complex business problems into clean, reliable systems.</p>
+                                <p class="card-meta">Node.js · Nest.js · TypeScript · Shopify · PostgreSQL · Redis · Kafka · BullMQ · Nuxt.js</p>
+                                <p class="card-links">
+                                    <a href="https://www.github.com/rohit-gh" target="_top" rel="noopener">Github</a>
+                                    <span aria-hidden="true"> · </span>
+                                    <a href="https://www.linkedin.com/in/heyrohit94" target="_top" rel="noopener">LinkedIn</a>
+                                </p>
+                            </div>
+                        </article>
                     </div>
-                    <div class="uk-card-body uk-text-center">
-                        <h3 class="uk-card-title">Traveller</h3>
-                        <p>Living wanderlust life since childhood. Bigger plans for future destinations.</p>
-                        <a href="https://www.instagram.com/rohitgupta.insta" target="_top">Instagram</a>
+
+                    <div>
+                        <article class="uk-card uk-card-default persona-card">
+                            <div class="uk-card-media-top">
+                                <a class="card-image-link" href="https://www.instagram.com/rohitgupta.insta" target="_top" rel="noopener">
+                                    <picture>
+                                        <source srcset="rohit-traveller.webp" type="image/webp">
+                                        <img src="rohit-traveller.jpg" alt="Rohit Gupta exploring as a traveller" width="400" height="400" loading="lazy" decoding="async">
+                                    </picture>
+                                </a>
+                            </div>
+                            <div class="uk-card-body">
+                                <h2 class="uk-card-title">Traveller</h2>
+                                <p class="card-description">Living a wanderlust life since childhood — from spontaneous road trips to planned adventures across mountains, cities, and coastlines.</p>
+                                <p class="card-meta">Documenting journeys on Instagram · Chasing new cultures, food, and views · Always planning the next destination</p>
+                                <p class="card-links">
+                                    <a href="https://www.instagram.com/rohitgupta.insta" target="_top" rel="noopener">Instagram [Sometimes Inactive]</a>
+                                </p>
+                            </div>
+                        </article>
                     </div>
-                    <div class="uk-visible@m uk-card-media-bottom">
-                        <center>
-                            <a href="https://www.instagram.com/rohitgupta.insta" target="_top">
-                                <img class="card-img-top" src="rohit-traveller.jpg">
-                            </a>
-                        </center>
+
+                    <div>
+                        <article class="uk-card uk-card-default persona-card">
+                            <div class="uk-card-media-top">
+                                <a class="card-image-link" href="https://somerohit.wordpress.com/" target="_top" rel="noopener">
+                                    <picture>
+                                        <source srcset="rohit-blogger.webp" type="image/webp">
+                                        <img src="rohit-blogger.jpg" alt="Rohit Gupta as a blogger" width="400" height="400" loading="lazy" decoding="async">
+                                    </picture>
+                                </a>
+                            </div>
+                            <div class="uk-card-body">
+                                <h2 class="uk-card-title">Blogger</h2>
+                                <p class="card-description">Writing blogs since 2016 on relatable stories, real-life experiences, and everyday reflections worth sharing with the world.</p>
+                                <p class="card-meta">Personal essays · Travel notes · Life observations · Published on WordPress and Tumblr</p>
+                                <p class="card-links">
+                                    <a href="https://somerohit.wordpress.com/" target="_top" rel="noopener">WordPress</a>
+                                    <span aria-hidden="true"> · </span>
+                                    <a href="http://copsbehindme.tumblr.com/" target="_top" rel="noopener">Tumblr</a>
+                                </p>
+                            </div>
+                        </article>
                     </div>
-                </div>
+                </section>
             </div>
-
-            <div>
-                <div class="uk-card uk-card-default">
-                    <div class="uk-card-media-top">
-                        <center>
-                            <a href="https://somerohit.wordpress.com/" target="_top">
-                                <img class="card-img-top" src="rohit-blogger.jpg">
-                            </a>
-                        </center>
-                    </div>
-                    <div class="uk-card-body uk-text-center">
-                        <h3 class="uk-card-title ">Blogger</h3>
-                        <p>Writing blogs since 2016. Mostly on relatable stuff and real life experiences.</p>
-                        <a href="https://somerohit.wordpress.com/" target="_top">WordPress</a>, <a href="http://copsbehindme.tumblr.com/" target="_top">Tumblr</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-
+        </main>
     </div>
-    <div class="footer text-center" id="legalFooter">
-        Legals : <a href="legal.html">Privacy Policy and Terms of Use</a>
-    </div>
 
+    <footer class="footer" id="legalFooter">
+        <div class="footer-inner">
+            <a href="legal.html">Privacy Policy &amp; Terms of Use</a>
+        </div>
+    </footer>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.25.16/dist/js/uikit.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.25.16/dist/js/uikit-icons.min.js" defer></script>
+    <script src="quotes.js" defer></script>
 </body>
 
 </html>

@@ -1,0 +1,57 @@
+---
+description: CDN libraries, versions, and script load order
+globs: "**/*.html"
+alwaysApply: false
+---
+
+# Libraries & CDN
+
+## All pages (unified stack)
+
+Load in `<head>`:
+
+1. **UIkit CSS** — `uikit@3.25.16` (jsDelivr)
+2. **custom.css** — local shared stylesheet
+
+Load before `</body>` with `defer`:
+
+1. **UIkit JS** — `uikit.min.js` + `uikit-icons.min.js`
+
+```html
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.25.16/dist/css/uikit.min.css">
+<link rel="stylesheet" href="custom.css">
+
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.25.16/dist/js/uikit.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.25.16/dist/js/uikit-icons.min.js" defer></script>
+```
+
+jQuery has been removed. Bootstrap is no longer used on active pages. Use UIkit data attributes (`uk-*`) and vanilla JS for interactivity.
+
+## Favicon
+
+Use local `favicon.ico` in repo root:
+
+```html
+<link rel="icon" href="favicon.ico" sizes="any">
+```
+
+## Images
+
+WebP variants (`rohit-*.webp`) committed in repo; `<picture>` provides JPG fallback in markup:
+
+```html
+<link rel="preload" as="image" href="rohit-developer.webp" type="image/webp">
+
+<picture>
+  <source srcset="rohit-developer.webp" type="image/webp">
+  <img src="rohit-developer.jpg" alt="..." width="400" height="400" fetchpriority="high" decoding="async">
+</picture>
+```
+
+## Upgrade Guidelines
+
+- Bump UIkit on all HTML pages together; test offcanvas, grid, cards
+- Pin CDN URLs with explicit versions; avoid `@latest`
+- Keep scripts deferred at end of `<body>` for FCP/LCP
+- Prefer jsDelivr over cdnjs for UIkit (current standard)
